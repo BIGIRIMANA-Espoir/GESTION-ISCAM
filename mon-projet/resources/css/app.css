@@ -1,0 +1,58 @@
+/* Logo ISCAM */
+.logo-iscam {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-lances {
+    display: flex;
+    gap: 5px;
+}
+
+.lance {
+    width: 8px;
+    height: 30px;
+    background: linear-gradient(45deg, #FFD700, #FFA500);
+    transform: rotate(45deg);
+    position: relative;
+}
+
+.lance::after {
+    content: '▲';
+    position: absolute;
+    top: -15px;
+    left: -5px;
+    color: #FFD700;
+    font-size: 16px;
+}
+
+.logo-lion {
+    width: 40px;
+    height: 40px;
+    background: #FFD700;
+    border-radius: 50%;
+    position: relative;
+    margin: 0 10px;
+}
+
+.logo-lion::before {
+    content: '🦁';
+    position: absolute;
+    font-size: 30px;
+    top: -5px;
+    left: 5px;
+}
+
+.logo-fdnb {
+    font-size: 12px;
+    font-weight: bold;
+    color: #FFD700;
+    border-left: 2px solid #FFD700;
+    padding-left: 10px;
+}
+
+.logo-fdnb small {
+    display: block;
+    font-size: 10px;
+}
