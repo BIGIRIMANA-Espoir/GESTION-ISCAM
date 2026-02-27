@@ -150,15 +150,27 @@ L'application suit l'architecture MVC (Modèle-Vue-Contrôleur) :
 3.7. Structure de la base de données
 
 Notre base de données comprend les principales tables suivantes :
+
+
+
 •	Users(Utilisateurs) : Comptes utilisateur (admin, enseignant, étudiant)
+
 •	etudiants : Informations spécifiques aux étudiants
+
 •	enseignants : Informations spécifiques aux enseignants
+
 •	facultes : Facultés de l'établissement
+
 •	departements : Départements liés aux facultés
+
 •	cours : Cours enseignés
+
 •	inscriptions : Inscriptions des étudiants aux cours
+
 •	notes : Notes obtenues par les étudiants
+
 •	notifications : Système de notifications
+
 •	annees_academiques : Années académiques
 
 
