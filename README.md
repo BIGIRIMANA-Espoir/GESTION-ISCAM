@@ -140,10 +140,16 @@ GitHub	Hébergement du code et collaboration
 
 
 L'application suit l'architecture MVC (Modèle-Vue-Contrôleur) :
+
+
 •	Modèles : Représentent les entités (User, Etudiant, Enseignant, Cours, Note, etc.)
+
 •	Vues : Templates Blade pour l'affichage
+
 •	Contrôleurs : Gèrent la logique métier
+
 •	+Services : Encapsulent la logique complexe réutilisable
+
 •	+Middleware : Gèrent la sécurité et les autorisations
 
 
