@@ -107,11 +107,7 @@ Laravel est un framework PHP moderne qui suit l'architecture MVC (Modèle-Vue-Co
 
 Version : MySQL 8.0
 
-MySQL est un système de gestion de base de données relationnelle robuste et performant. Il nous a permis de:
-•	Structurer nos données de manière cohérente
-•	Établir des relations entre les tables (étudiants, enseignants, cours, notes)
-•	Garantir l'intégrité des données
-•	Effectuer des requêtes complexes pour les statistiques
+MySQL est un système de gestion de base de données relationnelle robuste et performant. Il nous a permis de:Structurer nos données de manière cohérente;	Établir des relations entre les tables (étudiants, enseignants, cours, notes);Garantir l'intégrité des données et Effectuer des requêtes complexes pour les statistiques
 
 
 3.3. Langages de programmation
@@ -154,6 +150,7 @@ L'application suit l'architecture MVC (Modèle-Vue-Contrôleur) :
 
 
 3.7. Structure de la base de données
+
 
 Notre base de données comprend les principales tables suivantes :
 
