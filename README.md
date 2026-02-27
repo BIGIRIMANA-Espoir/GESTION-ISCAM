@@ -72,9 +72,14 @@ Pour le développement de cette application, nous avons opté pour la méthodolo
 2.3. Avantages constatés
 
 Cette approche nous a permis de :
+
+
 •	Livrer rapidement des versions fonctionnelles
+
 •	Adapter les fonctionnalités aux besoins réels
+
 •	Détecter et corriger les problèmes plus tôt
+
 •	Travailler de manière itérative et collaborative
 
 
