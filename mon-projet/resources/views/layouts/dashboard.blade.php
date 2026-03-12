@@ -133,7 +133,6 @@
             color: white;
         }
         
-<<<<<<< HEAD
         /* Styles pour les notifications */
         .notification-badge {
             position: absolute;
@@ -168,8 +167,6 @@
             flex: 1;
         }
         
-=======
->>>>>>> dc3cbcba89211e5eb337f66ce5514e004a1cd8c1
         /* Content */
         .content {
             padding: 30px;
@@ -269,12 +266,9 @@
                     
                     <div class="user-info">
                         @auth
-<<<<<<< HEAD
-                            <!-- ✅ AJOUT: Icône de notifications (cloche) -->
+                            <!-- AJOUT: Icône de notifications (cloche) -->
                             @include('layouts.partials.notifications')
                             
-=======
->>>>>>> dc3cbcba89211e5eb337f66ce5514e004a1cd8c1
                             <span>
                                 <i class="fas fa-user me-2"></i>
                                 {{ auth()->user()->name }}
@@ -315,11 +309,7 @@
     </div>
     
     <!-- ========== SCRIPTS ========== -->
-<<<<<<< HEAD
     <!-- 1. jQuery en premier -->
-=======
-    <!-- 1. jQuery en premier (OBLIGATOIRE pour Select2) -->
->>>>>>> dc3cbcba89211e5eb337f66ce5514e004a1cd8c1
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     
     <!-- 2. Bootstrap JS -->

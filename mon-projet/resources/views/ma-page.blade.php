@@ -10,7 +10,6 @@
             <div class="bg-primary text-white p-5 rounded-3">
                 <div class="row align-items-center">
                     <div class="col-md-3">
-<<<<<<< HEAD
                         <!-- ✅ LOGO BAC (image téléchargée) -->
                         <div class="text-center">
                             <img src="{{ asset('Pictures/LOGOS BAC.png') }}"                         
@@ -23,23 +22,6 @@
                                 <p style="font-size: 1rem; font-weight: 500; color: #ffd700; font-style: italic; border: 2px solid #ffd700; padding: 8px 12px; display: inline-block; background: rgba(255,215,0,0.1); border-radius: 30px;">
                                     "Que soient ici ceux qui veulent et qui peuvent"
                                 </p>
-=======
-                        <!-- Logo détaillé -->
-                        <div class="d-flex align-items-center justify-content-center">
-                            <div class="text-center">
-                                <div class="mb-2">
-                                    <i class="fas fa-shield-alt fa-2x text-warning mx-1"></i>
-                                    <i class="fas fa-shield-alt fa-2x text-warning mx-1"></i>
-                                    <i class="fas fa-shield-alt fa-2x text-warning mx-1"></i>
-                                </div>
-                                <div>
-                                    <i class="fas fa-crown fa-2x text-warning"></i>
-                                    <i class="fas fa-lion fa-3x text-warning" style="margin-left: -10px;"></i>
-                                </div>
-                                <div class="mt-2">
-                                    <small class="text-warning">UNITÉ-TRAVAIL-PROGRÈS</small>
-                                </div>
->>>>>>> dc3cbcba89211e5eb337f66ce5514e004a1cd8c1
                             </div>
                         </div>
                     </div>
