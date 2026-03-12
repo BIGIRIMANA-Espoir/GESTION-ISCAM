@@ -6,7 +6,6 @@ use App\Repositories\NoteRepository;
 use App\Repositories\EtudiantRepository;
 use App\Repositories\CoursRepository;
 use App\Models\Note;
-use App\Models\Notification;
 use Illuminate\Support\Collection;
 
 class NoteService extends BaseService
@@ -70,7 +69,7 @@ class NoteService extends BaseService
     }
 
     /**
-     * Enter grade with notification
+     * Enter grade - VERSION SIMPLIFIÉE POUR LA PRÉSENTATION
      */
     public function enterGrade(array $data): Note
     {
@@ -87,18 +86,8 @@ class NoteService extends BaseService
             throw new \InvalidArgumentException("Une note existe déjà pour cet étudiant dans ce cours");
         }
         
+        // ✅ Création de la note uniquement (pas de notifications)
         $note = $this->create($data);
-        
-        if ($etudiant->user_id) {
-            Notification::create([
-                'user_id' => $etudiant->user_id,
-                'type' => 'info',
-                'titre' => 'Nouvelle note publiée',
-                'message' => "Votre note en {$cours->nom_cours} est : {$data['note']}/20",
-                'lien' => '/etudiant/notes',
-                'lu' => false
-            ]);
-        }
         
         return $note;
     }
@@ -157,7 +146,6 @@ class NoteService extends BaseService
 
     /**
      * Get global success rate
-     * AJOUTÉ POUR STATISTIQUES
      *
      * @return float
      */

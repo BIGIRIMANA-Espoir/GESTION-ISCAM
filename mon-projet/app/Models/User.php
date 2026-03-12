@@ -21,7 +21,7 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
-        'role',  // ✅ AJOUTÉ - Maintenant le rôle peut être modifié !
+        'role',
     ];
 
     /**
@@ -49,7 +49,7 @@ class User extends Authenticatable
      */
     public function etudiant()
     {
-        return $this->hasOne(Etudiant::class);
+        return $this->hasOne(Etudiant::class, 'user_id');
     }
 
     /**
@@ -57,22 +57,54 @@ class User extends Authenticatable
      */
     public function enseignant()
     {
-        return $this->hasOne(Enseignant::class);
+        return $this->hasOne(Enseignant::class, 'user_id');
+    }
+    
+    /**
+     * Vérifier si l'utilisateur est un admin
+     */
+    public function isAdmin(): bool
+    {
+        return $this->role === 'admin';
     }
 
     /**
-     * Get all notifications for the user.
+     * Vérifier si l'utilisateur est un étudiant
      */
-    public function notifications()
+    public function isEtudiant(): bool
     {
-        return $this->hasMany(Notification::class);
+        return $this->role === 'etudiant';
     }
 
     /**
-     * Get unread notifications for the user.
+     * Vérifier si l'utilisateur est un enseignant
      */
-    public function notificationsNonLues()
+    public function isEnseignant(): bool
     {
-        return $this->hasMany(Notification::class)->where('lu', false);
+        return $this->role === 'enseignant';
+    }
+
+    /**
+     * Scope pour filtrer les admins uniquement
+     */
+    public function scopeAdmins($query)
+    {
+        return $query->where('role', 'admin');
+    }
+
+    /**
+     * Scope pour filtrer les étudiants
+     */
+    public function scopeEtudiants($query)
+    {
+        return $query->where('role', 'etudiant');
+    }
+
+    /**
+     * Scope pour filtrer les enseignants
+     */
+    public function scopeEnseignants($query)
+    {
+        return $query->where('role', 'enseignant');
     }
 }

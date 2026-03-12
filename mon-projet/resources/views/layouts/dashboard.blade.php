@@ -133,6 +133,40 @@
             color: white;
         }
         
+        /* Styles pour les notifications */
+        .notification-badge {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            font-size: 0.6rem;
+            padding: 0.2rem 0.4rem;
+        }
+        
+        .notification-menu {
+            width: 350px;
+            max-height: 400px;
+            overflow-y: auto;
+            padding: 0;
+        }
+        
+        .notification-item {
+            padding: 10px 15px;
+            border-bottom: 1px solid #f1f1f1;
+            transition: background 0.3s;
+        }
+        
+        .notification-item:hover {
+            background: #f8f9fa;
+        }
+        
+        .notification-item.unread {
+            background: #e8f4fd;
+        }
+        
+        .notification-content {
+            flex: 1;
+        }
+        
         /* Content */
         .content {
             padding: 30px;
@@ -232,6 +266,9 @@
                     
                     <div class="user-info">
                         @auth
+                            <!-- ✅ AJOUT: Icône de notifications (cloche) -->
+                            @include('layouts.partials.notifications')
+                            
                             <span>
                                 <i class="fas fa-user me-2"></i>
                                 {{ auth()->user()->name }}
@@ -272,7 +309,7 @@
     </div>
     
     <!-- ========== SCRIPTS ========== -->
-    <!-- 1. jQuery en premier (OBLIGATOIRE pour Select2) -->
+    <!-- 1. jQuery en premier -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     
     <!-- 2. Bootstrap JS -->

@@ -192,6 +192,53 @@ class CoursService extends BaseService
     }
 
     /**
+     * Update an existing course
+     * ✅ AJOUTÉ POUR CORRIGER L'ERREUR DE MISE À JOUR
+     *
+     * @param int $id
+     * @param array $data
+     * @return Cours
+     * @throws \InvalidArgumentException
+     */
+    public function updateCourse(int $id, array $data): Cours
+    {
+        Log::info('🔄 Mise à jour du cours ID: ' . $id);
+        
+        // Validation des données
+        if (empty($data['nom_cours'])) {
+            throw new \InvalidArgumentException("Le nom du cours est requis");
+        }
+        
+        if (empty($data['credits']) || $data['credits'] < 1 || $data['credits'] > 10) {
+            throw new \InvalidArgumentException("Les crédits doivent être compris entre 1 et 10");
+        }
+        
+        if (empty($data['departement_id'])) {
+            throw new \InvalidArgumentException("Le département est requis");
+        }
+        
+        // Vérifier si le cours existe
+        $cours = $this->coursRepository->find($id);
+        if (!$cours) {
+            throw new \InvalidArgumentException("Cours non trouvé");
+        }
+        
+        // Vérifier si le code existe déjà pour un autre cours (si le code est fourni)
+        if (!empty($data['code_cours']) && $data['code_cours'] !== $cours->code_cours) {
+            $existing = $this->getByCode($data['code_cours']);
+            if ($existing && $existing->id != $id) {
+                throw new \InvalidArgumentException("Ce code de cours est déjà utilisé");
+            }
+        }
+        
+        // Mettre à jour le cours
+        $cours->update($data);
+        Log::info('✅ Cours ID ' . $id . ' mis à jour avec succès');
+        
+        return $cours;
+    }
+
+    /**
      * Validate course data
      *
      * @param array $data

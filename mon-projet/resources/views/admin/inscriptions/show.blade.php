@@ -309,11 +309,16 @@
                 </div>
                 <div class="card-body">
                     @php
-                        $notifications = App\Models\Notification::where('user_id', $inscription->etudiant->user_id ?? 0)
-                            ->where('created_at', '>=', $inscription->created_at)
-                            ->orderBy('created_at', 'desc')
-                            ->limit(5)
-                            ->get();
+                        // ✅ CODE CORRIGÉ POUR LES NOTIFICATIONS
+                        $notifications = collect([]);
+                        if ($inscription->etudiant && $inscription->etudiant->user_id) {
+                            $notifications = App\Models\Notification::where('notifiable_type', 'App\Models\User')
+                                ->where('notifiable_id', $inscription->etudiant->user_id)
+                                ->where('created_at', '>=', $inscription->created_at)
+                                ->orderBy('created_at', 'desc')
+                                ->limit(5)
+                                ->get();
+                        }
                     @endphp
                     
                     @if($notifications->count() > 0)
