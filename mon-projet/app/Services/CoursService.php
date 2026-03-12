@@ -192,6 +192,7 @@ class CoursService extends BaseService
     }
 
     /**
+<<<<<<< HEAD
      * Update an existing course
      * ✅ AJOUTÉ POUR CORRIGER L'ERREUR DE MISE À JOUR
      *
@@ -239,6 +240,8 @@ class CoursService extends BaseService
     }
 
     /**
+=======
+>>>>>>> dc3cbcba89211e5eb337f66ce5514e004a1cd8c1
      * Validate course data
      *
      * @param array $data

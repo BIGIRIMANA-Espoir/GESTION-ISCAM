@@ -2,7 +2,11 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DashboardController;
+<<<<<<< HEAD
 use Illuminate\Support\Facades\Auth;
+=======
+use Illuminate\Support\Facades\Auth;  // ← IMPORTANT !
+>>>>>>> dc3cbcba89211e5eb337f66ce5514e004a1cd8c1
 
 // ===========================================
 // ROUTES PUBLIQUES
@@ -112,6 +116,7 @@ Route::middleware(['auth'])->group(function () {
         Route::get('/profil', [App\Http\Controllers\Etudiant\ProfileController::class, 'index'])->name('profile');
         Route::put('/profil', [App\Http\Controllers\Etudiant\ProfileController::class, 'update'])->name('profile.update');
     });
+<<<<<<< HEAD
 });
 
 // ===========================================
@@ -121,4 +126,6 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/notifications', [App\Http\Controllers\NotificationController::class, 'index'])->name('notifications.index');
     Route::get('/notifications/{id}/mark-read', [App\Http\Controllers\NotificationController::class, 'markAsRead'])->name('notifications.mark-read');
     Route::get('/notifications/mark-all-read', [App\Http\Controllers\NotificationController::class, 'markAllAsRead'])->name('notifications.mark-all-read');
+=======
+>>>>>>> dc3cbcba89211e5eb337f66ce5514e004a1cd8c1
 });
