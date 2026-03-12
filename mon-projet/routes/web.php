@@ -2,11 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DashboardController;
-<<<<<<< HEAD
 use Illuminate\Support\Facades\Auth;
-=======
-use Illuminate\Support\Facades\Auth;  // ← IMPORTANT !
->>>>>>> dc3cbcba89211e5eb337f66ce5514e004a1cd8c1
 
 // ===========================================
 // ROUTES PUBLIQUES
@@ -59,7 +55,7 @@ Route::middleware(['auth'])->group(function () {
         Route::get('/notes/create-bulk', [App\Http\Controllers\Admin\NoteController::class, 'bulkCreate'])->name('notes.bulk-create');
         Route::post('/notes/bulk-store', [App\Http\Controllers\Admin\NoteController::class, 'bulkStore'])->name('notes.bulk-store');
         
-        // ✅ AJOUT : Demandes d'inscription (pending-users)
+        // AJOUT : Demandes d'inscription (pending-users)
         Route::get('/pending-users', [App\Http\Controllers\Admin\PendingUserController::class, 'index'])->name('pending-users.index');
         Route::get('/pending-users/{id}', [App\Http\Controllers\Admin\PendingUserController::class, 'show'])->name('pending-users.show');
         Route::post('/pending-users/{id}/approve', [App\Http\Controllers\Admin\PendingUserController::class, 'approve'])->name('pending-users.approve');
@@ -116,16 +112,13 @@ Route::middleware(['auth'])->group(function () {
         Route::get('/profil', [App\Http\Controllers\Etudiant\ProfileController::class, 'index'])->name('profile');
         Route::put('/profil', [App\Http\Controllers\Etudiant\ProfileController::class, 'update'])->name('profile.update');
     });
-<<<<<<< HEAD
 });
 
 // ===========================================
-// ✅ AJOUT: ROUTES POUR LES NOTIFICATIONS
+// ROUTES POUR LES NOTIFICATIONS
 // ===========================================
 Route::middleware(['auth'])->group(function () {
     Route::get('/notifications', [App\Http\Controllers\NotificationController::class, 'index'])->name('notifications.index');
     Route::get('/notifications/{id}/mark-read', [App\Http\Controllers\NotificationController::class, 'markAsRead'])->name('notifications.mark-read');
     Route::get('/notifications/mark-all-read', [App\Http\Controllers\NotificationController::class, 'markAllAsRead'])->name('notifications.mark-all-read');
-=======
->>>>>>> dc3cbcba89211e5eb337f66ce5514e004a1cd8c1
 });
