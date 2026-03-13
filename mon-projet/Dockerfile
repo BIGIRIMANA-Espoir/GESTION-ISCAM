@@ -2,6 +2,11 @@ FROM richarvey/nginx-php-fpm:3.1.6
 
 COPY . .
 
+FROM richarvey/nginx-php-fpm:3.1.6
+
+# On force la copie du contenu actuel vers le dossier racine du serveur
+COPY . /var/www/html/
+
 # Image config
 ENV SKIP_COMPOSER 1
 ENV WEBROOT /var/www/html/public
