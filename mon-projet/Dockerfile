@@ -15,9 +15,6 @@ ENV APP_ENV production
 ENV APP_DEBUG false
 ENV LOG_CHANNEL stderr
 
-# Commande magique pour lancer les migrations au démarrage
-RUN php artisan migrate --force
-
 # Allow composer to run as root
 ENV COMPOSER_ALLOW_SUPERUSER 1
 
