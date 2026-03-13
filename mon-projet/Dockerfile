@@ -1,10 +1,6 @@
 FROM richarvey/nginx-php-fpm:3.1.6
 
-COPY . .
-
-FROM richarvey/nginx-php-fpm:3.1.6
-
-# On force la copie du contenu actuel vers le dossier racine du serveur
+# On copie tout le contenu vers le dossier racine du serveur
 COPY . /var/www/html/
 
 # Image config
@@ -18,6 +14,9 @@ ENV REAL_IP_HEADER 1
 ENV APP_ENV production
 ENV APP_DEBUG false
 ENV LOG_CHANNEL stderr
+
+# Commande magique pour lancer les migrations au démarrage
+RUN php artisan migrate --force
 
 # Allow composer to run as root
 ENV COMPOSER_ALLOW_SUPERUSER 1
